@@ -2,7 +2,7 @@ class Catcher{
   PVector loc;
   int r;
   Catcher() {
-    loc= new PVector(mouseX,height);
+    loc= new PVector(mouseX,470);
     r=100;
   }
   void display(){
@@ -10,7 +10,7 @@ class Catcher{
     ellipse(loc.x,loc.y,50,50);
   }
   void update(){
-    loc.set(mouseX,height);
+    loc.set(mouseX,470);
 }
 }
 

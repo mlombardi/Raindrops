@@ -1,4 +1,4 @@
-Rain[] r = new Rain[1];
+Rain[] r = new Rain[3];
 Catcher catcher;
 void setup() {
   size(500, 500);
