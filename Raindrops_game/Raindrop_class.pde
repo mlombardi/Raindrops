@@ -5,7 +5,7 @@ class Rain {
 
   Rain() {
     d=10;
-    loc = new PVector(random(-100, width+100), random(-500,-100));
+    loc = new PVector(random(0,500),0);
     vel = new PVector(0, 1);
  
   }
