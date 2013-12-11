@@ -28,8 +28,8 @@ void draw() {
     oldTime=currentTime;
     index++;
   }
-  if(score==5){
-    text("Winner!", width/2,height/2);
+  if(score>=10){
+    text("Winner!", 200,height/2);
   }
 }
 
