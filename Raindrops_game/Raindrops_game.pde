@@ -34,14 +34,9 @@ void draw() {
     oldTime=currentTime;
     index++;
   }
-<<<<<<< HEAD
   //If the score is 10 or greater a winner message is displayed in the center of the screen
   if (score>=10) {
     text("Winner!", 200, height/2);
-=======
-  if(score>=10){
-    text("Winner!", 200,height/2);
->>>>>>> Winner text
   }
 }
 
