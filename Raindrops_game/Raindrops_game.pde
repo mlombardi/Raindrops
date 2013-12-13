@@ -13,7 +13,7 @@ void setup() {
   rect(x, y, d, d);
   textSize(30);
   size(500, 500);
-   //Initializes the raindrops
+  //Initializes the raindrops
   for (int i = 0; i < r.length; i++) {
     r[i] = new Rain();
   }
@@ -42,11 +42,13 @@ void draw() {
     //The score is displayed in the top right corner
     text(score, 450, 50);
     currentTime=millis();
+    //a raindrop falls every 3 seconds
     if (currentTime-oldTime >= 3000) {
       oldTime=currentTime;
       index++;
     }
   }
+  //If the score is 10 or greater a winner message is displayed in the center of the screen
   if (score>=10) {
     text("Winner!", 200, height/2);
   }
