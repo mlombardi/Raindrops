@@ -46,6 +46,7 @@ void draw() {
     if (currentTime-oldTime >= 3000) {
       oldTime=currentTime;
       index++;
+      println("Time: " + currentTime);
     }
   }
   //If the score is 10 or greater a winner message is displayed in the center of the screen

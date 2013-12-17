@@ -18,7 +18,8 @@ class Rain {
     loc.add(vel);
     //when the raindrop gets to the bottom of the screen, it's y location goes back to 0
     if (loc.y>height) {
-      loc.y=0;
+      loc.set(width*10,0);
+      vel.set(0,0);
     }
   }
 }
