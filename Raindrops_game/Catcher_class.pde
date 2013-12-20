@@ -10,6 +10,7 @@ class Catcher {
   //Display the catcher
   void display() {
     loc.x=mouseX;
+    fill(250, 50, 100);
     ellipse(loc.x, loc.y, d, d);
   }
   void update() {

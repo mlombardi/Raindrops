@@ -10,7 +10,10 @@ class Rain {
     loc = new PVector(random(0, 500), 0);
     vel = new PVector(0, 1);
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Start-and-Game-over-Screen
   //This displays the raindrops
   void display() {
     ellipse(loc.x, loc.y, d, d);
@@ -19,7 +22,12 @@ class Rain {
     loc.add(vel);
     //when the raindrop gets to the bottom of the screen, it's y location goes back to 0
     if (loc.y>height) {
+<<<<<<< HEAD
       loc.y=0;
+=======
+      loc.set(width*10,0);
+      vel.set(0,0);
+>>>>>>> origin/Start-and-Game-over-Screen
     }
   }
 }
