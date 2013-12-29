@@ -10,6 +10,8 @@ int x=350;
 int y=200;
 int d=100;
 boolean run=false;
+boolean fail = false;
+boolean win = false;
 //Creates an array of raindrops
 Rain[] r = new Rain[100];
 Catcher catcher;
@@ -29,6 +31,7 @@ void setup() {
 
 void draw() {
   background(0, 20, 100);
+  textSize(30);
   if (run==false) {
     background(255);
     fill(150, 50, 200);
@@ -68,23 +71,52 @@ void draw() {
 
   //If the score is 10 or greater a winner message is displayed in the center of the screen
   if (score>=2) {
+    fail = true;
     background(0);
-    textSize(60);
-    text("WINNER!", 290, 270);
-  }
-  if (lives==0) {
-    background(0);
+    run = false;
     textSize(60);
     fill(100, 200, 100);
-    text("Game Over", 230, 200);
+    text("WINNER!", 290, 190);
+    fill(150, 50, 200);
+    rect(x, y, d, d);
+    textSize(17);
+    fill(0);
+    text("Start Over", x+12, y+50);
+  }
+  if (lives==0) {
+    win = true;
+    background(0);
+    run = false;
+    textSize(60);
+    fill(100, 200, 100);
+    text("Game Over", 230, 190);
+    fill(150, 50, 200);
+    rect(x, y, d, d);
+    textSize(17);
+    fill(0);
+    text("Start Over", x+12, y+50);
   }
 }
 void mousePressed() {
   if (mouseX<x+d && mouseX>x  && mouseY<y+d && mouseY>y) {
-    run = true;
-  }
-  else if (mouseX<x+d && mouseX>x  && mouseY<y+d && mouseY>y) {
-    run = false;
+    if (run == false && fail == false && win == false)
+    {
+      run = true;
+    }
+    if (run == false && fail == true && win == false)
+    {
+      run = true;
+      fail = false;
+      score = 0;
+      lives = 3;
+    }
+    if (run == false && fail == false && win == true)
+    {
+      run = true;
+      win = false;
+      score = 0;
+      lives = 3;
+    }
   }
 }
 
