@@ -42,17 +42,17 @@ void draw() {
       r[i].display();
       r[i].drop();
       catcher.catchDrop(r[i]);
-      //when the raindrop gets to the bottom of the screen, its location goes off the screen
+      //when the raindrop gets to the bottom of the screen, its location goes off the screen and lives decrease by one
       if (r[i].loc.y>=height) {
         lives-=1;
-        r[i].loc.set(width*10, height*10);
+        r[i].loc.set(width*10, -height);
         r[i].vel.set(0, 0);
       }
     }
     catcher.display();
     catcher.update();
     //The score is displayed in the top right corner
-     text("Score=", 650, 50);
+    text("Score=", 650, 50);
     text(score, 750, 50);
     //lives are displayed in the top left corner
     text(lives, 125, 50);
@@ -71,6 +71,12 @@ void draw() {
     background(0);
     textSize(60);
     text("WINNER!", 290, 270);
+  }
+  if (lives==0) {
+    background(0);
+    textSize(60);
+    fill(100, 200, 100);
+    text("Game Over", 230, 200);
   }
 }
 void mousePressed() {
