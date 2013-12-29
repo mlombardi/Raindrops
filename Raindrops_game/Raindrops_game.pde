@@ -5,7 +5,6 @@ int oldTime=0;
 int currentTime=0;
 int index=1;
 int lives=3;
-//Creates an array of raindrops 
 int x=350;
 int y=200;
 int d=100;
@@ -19,6 +18,7 @@ void setup() {
   rect(x, y, d, d);
   textSize(30);
   size(800, 500);
+  //loads images
   drop= loadImage("drop.png");
   bucket= loadImage("bucket.png");
   //Initializes the raindrops
@@ -32,6 +32,7 @@ void setup() {
 void draw() {
   background(0, 20, 100);
   textSize(30);
+  //this is the start screen 
   if (run==false) {
     background(255);
     fill(150, 50, 200);
@@ -69,8 +70,8 @@ void draw() {
     }
   }
 
-  //If the score is 10 or greater a winner message is displayed in the center of the screen
-  if (score>=2) {
+  //If the score is 10 or greater, a winner screen with a start over button is displayed
+  if (score>=10) {
     fail = true;
     background(0);
     run = false;
@@ -81,8 +82,9 @@ void draw() {
     rect(x, y, d, d);
     textSize(17);
     fill(0);
-    text("Start Over", x+12, y+50);
+    text("Restart", x+18, y+50);
   }
+  //If lives reaches 0, a game over screen with a start over button is displayed
   if (lives==0) {
     win = true;
     background(0);
@@ -94,9 +96,10 @@ void draw() {
     rect(x, y, d, d);
     textSize(17);
     fill(0);
-    text("Start Over", x+12, y+50);
+    text("Restart", x+18, y+50);
   }
 }
+//when the start button is pressed, the game will run
 void mousePressed() {
   if (mouseX<x+d && mouseX>x  && mouseY<y+d && mouseY>y) {
     if (run == false && fail == false && win == false)
